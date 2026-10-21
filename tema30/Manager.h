@@ -5,12 +5,12 @@ class Manager :
 {
 protected:
     float sales;
-    int procent;
+    int procents;
 public:
     Manager();
-    Manager(string name, float salary,float sales,int procent);
+    Manager(string name, float salary,float sales,int procents);
     void setSales(float sales);
-    void setProcent(int procent);
+    void setProcent(int procents);
     float getSales()const;
     int getProcents()const;
 
