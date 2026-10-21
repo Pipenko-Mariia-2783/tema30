@@ -9,13 +9,12 @@ protected:
 	float salary;
 public:
 	Employee();
-	Employee(string name,float salary);
+	Employee(string name, float salary);
 	void setName(string name);
 	void setSalary(float salary);
 	string getName()const;
 	float getSalary()const;
 
-	void show()const;
-	float calcSalary()const;
+	virtual void show()const;
+	virtual float calcSalary()const;
 };
-
