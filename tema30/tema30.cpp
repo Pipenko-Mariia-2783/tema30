@@ -2,6 +2,7 @@
 #include "Manager.h"
 #include "Teacher.h"
 #include <vector>
+#include <typeinfo>
 
 int main()
 {
@@ -22,7 +23,7 @@ int main()
         &Kamilla,
         &Sofia,
         new Manager("Vasya",25000,350,40),
-        new Teacher("Alisa",68000,40,700) };
+        new Teacher("Alisa",68000,40,900) };
 
     for (int i = 0; i < company.size(); i++) {
         /*cout << company[i] << endl; object adress*/
@@ -30,6 +31,17 @@ int main()
         company[i]->show();
         cout << "Total salary: " << company[i]->calcSalary() << endl;
         cout << endl;
+    }
+    cout << "--------------------------------------------------------------------------------------" << endl;
+    //Всім викладачам збільшити суму оплати за пару на 50 грн
+    for (int i = 0; i < company.size(); i++) {
+        /*cout << typeid(*company[i]).name() << endl;*/
+        if (typeid(*company[i]) == typeid(Teacher)) {
+            cout << company[i]->getName() << endl;
+            int price = ((Teacher*)company[i])->getCost() + 50;
+            ((Teacher*)company[i])->setCost(price);
+            cout << "New cost: " << ((Teacher*)company[i])->getCost() << endl;
+        }
     }
     
 }

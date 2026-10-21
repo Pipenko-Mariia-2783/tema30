@@ -14,7 +14,7 @@ public:
     float getSales()const;
     int getProcents()const;
 
-    void show()const;
+    void show()const /*override перевіряє чи є такий елемент у батька*/;
     float calcSalary()const;
 };
 
