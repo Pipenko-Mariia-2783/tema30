@@ -33,7 +33,7 @@ int main()
         cout << endl;
     }
     cout << "--------------------------------------------------------------------------------------" << endl;
-    //Всім викладачам збільшити суму оплати за пару на 50 грн
+    //всім викладачам збільшити суму оплати за пару на 50 грн
     for (int i = 0; i < company.size(); i++) {
         /*cout << typeid(*company[i]).name() << endl;*/
         if (typeid(*company[i]) == typeid(Teacher)) {
@@ -44,4 +44,14 @@ int main()
         }
     }
     
+    //2 варіант
+    for (int i = 0; i < company.size(); i++) {
+        Teacher* obj = dynamic_cast<Teacher*>(company[i]);
+        if (obj != nullptr) {
+            int price = obj->getCost() + 50;
+            obj->setCost(price);
+            cout << "Teacher: " << obj->getName() << endl;
+            cout << "New cost: " << obj->getCost() << endl;
+        }
+    }
 }
