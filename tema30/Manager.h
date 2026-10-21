@@ -15,6 +15,6 @@ public:
     int getProcents()const;
 
     void show()const;
-    float calcsalary()const;
+    float calcSalary()const;
 };
 

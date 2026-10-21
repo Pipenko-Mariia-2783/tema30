@@ -1,5 +1,6 @@
 #include "Employee.h"
 #include "Manager.h"
+#include "Teacher.h"
 
 int main()
 {
@@ -10,4 +11,8 @@ int main()
     Manager Kamilla("Kamilla", 180000, 9999, 50);
     Kamilla.show();
     cout << "Total salary: " << Kamilla.calcSalary() << endl;
+
+    Teacher Sofia("Sofia", 3500, 72, 700);
+    Sofia.show();
+    cout << "Total salary: " << Sofia.calcSalary() << endl;
 }

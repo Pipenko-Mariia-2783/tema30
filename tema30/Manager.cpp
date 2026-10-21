@@ -39,7 +39,7 @@ void Manager::show() const
     cout << "Procents: " << procents << endl;
 }
 
-float Manager::calcsalary() const
+float Manager::calcSalary() const
 {
     return (salary + sales * procents / 100) * 0.83;
 }
